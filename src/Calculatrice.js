@@ -1,4 +1,3 @@
-// Calculatrice.js
 export class Calculatrice {
     constructor() {
       this.historique = [];

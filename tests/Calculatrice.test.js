@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach } from 'vitest';
-import { Calculatrice } from './Calculatrice';
+import { Calculatrice } from '../src/Calculatrice.js';
 
 describe('Calculatrice', () => {
   let calculatrice;
