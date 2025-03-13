@@ -41,7 +41,7 @@ boutons.forEach(bouton => {
 
       case '+':
       case '-':
-      case '*':
+      case 'x':
         calcul += ` ${valeur} `;
         ecran.value = calcul;
         break;

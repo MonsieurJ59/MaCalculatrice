@@ -37,8 +37,8 @@ describe('Calculatrice', () => {
     });
 
     it('doit permettre de reprendre un résultat précédent depuis l\'historique', () => {
-      calculatrice.additionner(10, 5); // historique: [15]
-      const resultatPrecedent = calculatrice.reprendreHistorique(0); // reprendre premier résultat (15)
+      calculatrice.additionner(10, 5); 
+      const resultatPrecedent = calculatrice.reprendreHistorique(0); 
       const nouveauResultat = calculatrice.multiplier(resultatPrecedent, 2);
 
       expect(nouveauResultat).toBe(30);

@@ -42,7 +42,7 @@ export class Calculatrice {
           return this.additionner(Number(a), Number(b));
         case '-':
           return this.soustraire(Number(a), Number(b));
-        case '*':
+        case 'x':
           return this.multiplier(Number(a), Number(b));
         default:
           throw new Error('Opérateur non supporté');
