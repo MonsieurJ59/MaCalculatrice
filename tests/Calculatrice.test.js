@@ -23,6 +23,11 @@ describe('Calculatrice', () => {
       const resultat = calculatrice.multiplier(4, 3);
       expect(resultat).toBe(12);
     });
+
+    it('doit diviser deux nombres', () => {
+      const resultat = calculatrice.diviser(10, 2);
+      expect(resultat).toBe(5);
+    });
   });
 
   describe('Gestion de l\'historique', () => {

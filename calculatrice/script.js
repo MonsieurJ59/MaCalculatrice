@@ -22,34 +22,35 @@ boutons.forEach(bouton => {
     const valeur = bouton.textContent;
 
     switch (valeur) {
-      case 'C':
-        calcul = '';
-        ecran.value = '';
-        break;
+        case 'C':
+            calcul = '';
+            ecran.value = '';
+            break;
 
-      case '=':
-        try {
-          const resultat = calculatrice.calculerDepuisTexte(calcul);
-          ecran.value = resultat;
-          calcul = resultat.toString();
-          afficherHistorique();
-        } catch (error) {
-          ecran.value = 'Erreur';
-          calcul = '';
-        }
-        break;
+        case '=':
+            try {
+                const resultat = calculatrice.calculerDepuisTexte(calcul);
+                ecran.value = resultat;
+                calcul = resultat.toString();
+                afficherHistorique();
+            } catch (error) {
+                ecran.value = 'Erreur';
+                calcul = '';
+            }
+            break;
 
-      case '+':
-      case '-':
-      case 'x':
-        calcul += ` ${valeur} `;
-        ecran.value = calcul;
-        break;
+        case '+':
+        case '-':
+        case 'x':
+        case '/':
+            calcul += ` ${valeur} `;
+            ecran.value = calcul;
+            break;
 
-      default:
-        calcul += valeur;
-        ecran.value = calcul;
-        break;
+        default:
+            calcul += valeur;
+            ecran.value = calcul;
+            break;
     }
   });
 });

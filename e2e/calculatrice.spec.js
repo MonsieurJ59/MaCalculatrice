@@ -21,6 +21,18 @@ test.describe('Calculatrice E2E', () => {
     expect(resultatFront).toBe(resultatAttendu);
   });
 
+  test('doit afficher le résultat correct d\'une soustraction', async ({ page }) => {
+    await page.click('text=8');
+    await page.click('text=-');
+    await page.click('text=3');
+    await page.click('text==');
+
+    const resultatFront = await page.$eval('#ecran', el => el.value);
+    const resultatAttendu = calculatrice.soustraire(8, 3).toString();
+
+    expect(resultatFront).toBe(resultatAttendu);
+  });
+
   test('doit afficher le résultat correct d\'une multiplication', async ({ page }) => {
     await page.click('text=4');
     await page.click('text=x');
@@ -29,6 +41,19 @@ test.describe('Calculatrice E2E', () => {
 
     const resultatFront = await page.$eval('#ecran', el => el.value);
     const resultatAttendu = calculatrice.multiplier(4, 5).toString();
+
+    expect(resultatFront).toBe(resultatAttendu);
+  });
+
+  test('doit afficher le résultat correct d\'une division', async ({ page }) => {
+    await page.click('text=1');
+    await page.click('text=0');
+    await page.click('text=/');
+    await page.click('text=2');
+    await page.click('text==');
+
+    const resultatFront = await page.$eval('#ecran', el => el.value);
+    const resultatAttendu = calculatrice.diviser(10, 2).toString();
 
     expect(resultatFront).toBe(resultatAttendu);
   });
