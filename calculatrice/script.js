@@ -33,7 +33,7 @@ boutons.forEach(bouton => {
                 ecran.value = resultat;
                 calcul = resultat.toString();
                 afficherHistorique();
-            } catch (error) {
+            } catch {
                 ecran.value = 'Erreur';
                 calcul = '';
             }
