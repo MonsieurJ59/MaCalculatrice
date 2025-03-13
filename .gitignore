@@ -1,0 +1,20 @@
+# Dépendances npm
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Fichiers générés par Vitest / Jest
+coverage/
+.cache/
+
+# Environnement
+.env
+.env.local
+.env.*.local
+
+# Résultats des tests (si générés)
+reports/
+test-results/
