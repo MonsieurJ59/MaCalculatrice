@@ -46,7 +46,7 @@ npm install
 
 ### 2. Lancer l'application
 
-Ouvrir `calculatrice/index.html` dans un navigateur (recommandé avec [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) sur VSCode).
+Ouvrir `calculatrice/index.html` dans un navigateur.
 
 ### 3. Exécuter les tests
 
@@ -60,6 +60,9 @@ npm test
 
 ```bash
 npm run test:e2e
+```
+```
+npx playwright test --ui
 ```
 
 ### 4. Vérifier la qualité du code (ESLint)

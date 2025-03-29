@@ -11,9 +11,9 @@ test.describe('Calculatrice E2E', () => {
 
   test('doit afficher le résultat correct d\'une addition', async ({ page }) => {
     await page.click('text=2');
-    await page.click('text=+');
+    await page.click('button:text("+")');
     await page.click('text=3');
-    await page.click('text==');
+    await page.click('button:text("=")');
 
     const resultatFront = await page.$eval('#ecran', el => el.value);
     const resultatAttendu = calculatrice.additionner(2, 3).toString();
@@ -23,9 +23,9 @@ test.describe('Calculatrice E2E', () => {
 
   test('doit afficher le résultat correct d\'une soustraction', async ({ page }) => {
     await page.click('text=8');
-    await page.click('text=-');
+    await page.click('button:text("-")');
     await page.click('text=3');
-    await page.click('text==');
+    await page.click('button:text("=")');
 
     const resultatFront = await page.$eval('#ecran', el => el.value);
     const resultatAttendu = calculatrice.soustraire(8, 3).toString();
@@ -35,9 +35,9 @@ test.describe('Calculatrice E2E', () => {
 
   test('doit afficher le résultat correct d\'une multiplication', async ({ page }) => {
     await page.click('text=4');
-    await page.click('text=x');
+    await page.click('button:text("x")');
     await page.click('text=5');
-    await page.click('text==');
+    await page.click('button:text("=")');
 
     const resultatFront = await page.$eval('#ecran', el => el.value);
     const resultatAttendu = calculatrice.multiplier(4, 5).toString();
@@ -48,9 +48,9 @@ test.describe('Calculatrice E2E', () => {
   test('doit afficher le résultat correct d\'une division', async ({ page }) => {
     await page.click('text=1');
     await page.click('text=0');
-    await page.click('text=/');
+    await page.click('button:text("/")');
     await page.click('text=2');
-    await page.click('text==');
+    await page.click('button:text("=")');
 
     const resultatFront = await page.$eval('#ecran', el => el.value);
     const resultatAttendu = calculatrice.diviser(10, 2).toString();
@@ -59,8 +59,8 @@ test.describe('Calculatrice E2E', () => {
   });
 
   test('doit afficher une erreur si calcul invalide', async ({ page }) => {
-    await page.click('text=+');
-    await page.click('text==');
+    await page.click('button:text("+")');
+    await page.click('button:text("=")');
 
     const resultatFront = await page.$eval('#ecran', el => el.value);
 
