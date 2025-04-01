@@ -10,9 +10,10 @@ test.describe('Calculatrice E2E', () => {
   });
 
   test('doit afficher le résultat correct d\'une addition', async ({ page }) => {
-    await page.click('text=2');
+    await page.click('button:text("C")');
+    await page.click('button:text("2")');
     await page.click('button:text("+")');
-    await page.click('text=3');
+    await page.click('button:text("3")');
     await page.click('button:text("=")');
 
     const resultatFront = await page.$eval('#ecran', el => el.value);
@@ -22,9 +23,10 @@ test.describe('Calculatrice E2E', () => {
   });
 
   test('doit afficher le résultat correct d\'une soustraction', async ({ page }) => {
-    await page.click('text=8');
+    await page.click('button:text("C")');
+    await page.click('button:text("8")');
     await page.click('button:text("-")');
-    await page.click('text=3');
+    await page.click('button:text("3")');
     await page.click('button:text("=")');
 
     const resultatFront = await page.$eval('#ecran', el => el.value);
@@ -46,10 +48,11 @@ test.describe('Calculatrice E2E', () => {
   });
 
   test('doit afficher le résultat correct d\'une division', async ({ page }) => {
-    await page.click('text=1');
-    await page.click('text=0');
+    await page.click('button:text("C")');
+    await page.click('button:text("1")');
+    await page.click('button:text("0")');
     await page.click('button:text("/")');
-    await page.click('text=2');
+    await page.click('button:text("2")');
     await page.click('button:text("=")');
 
     const resultatFront = await page.$eval('#ecran', el => el.value);
