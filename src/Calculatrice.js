@@ -43,7 +43,6 @@ export class Calculatrice {
         this.historique = [];
     }
   
-    // Nouvelle méthode pour gérer une chaîne de calcul simple
     calculerDepuisTexte(chaine) {
         const [a, operateur, b] = chaine.split(' ');
   
